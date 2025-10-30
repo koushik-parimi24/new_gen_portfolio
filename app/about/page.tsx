@@ -1,7 +1,7 @@
     "use client";
 
     import { motion } from "framer-motion";
-    import Image from "next/image";
+    import Link from "next/link";
     import { RetroGrid } from "../../components/ui/retro-grid";
     import { BlurFade } from "@/components/ui/blur-fade"
     import { Highlighter } from "../../components/ui/highlighter";
@@ -35,6 +35,9 @@ import {
   ScrollVelocityContainer,
   ScrollVelocityRow,
 } from "@/components/ui/scroll-based-velocity";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { InteractiveHoverButton2 } from "@/components/ui/InteractiveHoverButton2";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
     export default function AboutPage() {
     const skills = [
         "React.js",
@@ -53,87 +56,97 @@ import {
         <RetroGrid className="absolute inset-0 z-0 opacity-40" />
 
         {/* HERO SECTION */}
-        <section className="relative z-10 grid max-w-7xl mx-auto px-6 md:px-12 py-24 md:grid-cols-2 gap-10 items-center">
-            {/* Left - Intro */}
-            <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }} 
-            className="space-y-6"
-            >
-            <h1 className="text-5xl font-extrabold leading-tight">
-                About <span className="text-indigo-400">Koushik Parimi</span>
-            </h1>
-            <p className="text-gray-900 text-lg max-w-md leading-relaxed">
-                An aspiring{" "}
-                <Highlighter action="highlight" color="#22D3EE">
-                software engineer
-                </Highlighter>{" "}
-                passionate about{" "}
-                <Highlighter action="underline" color="#FF9800">
-                problem solving
-                </Highlighter>{" "}
-                and{" "}
-                <Highlighter action="highlight" color="#A855F7">
-                full-stack development
-                </Highlighter>
-                . I love building scalable, efficient software solutions and
-                collaborating in fast-paced environments.
-            </p>
-            </motion.div>
+        {/* HERO SECTION */}
+<section className="relative z-10 grid max-w-7xl mx-auto px-6 md:px-12 py-24 md:grid-cols-2 gap-10 items-center">
+  {/* Left - Intro */}
+  <motion.div
+    initial={{ opacity: 0, x: -60 }}
+    animate={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    className="space-y-6"
+  >
+    <h1 className="text-5xl font-extrabold leading-tight">
+      About <span className="text-indigo-400">Koushik Parimi</span>
+    </h1>
 
-            {/* Right - Avatar */}
-            <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center"
-            >
-            <div className="relative">
-                <div className="absolute -inset-3 rounded-full bg-gradient-to-r from-indigo-200 to-purple-200 blur-2xl opacity-60 animate-pulse"></div>
- <Terminal>
-      <TypingAnimation>&gt; pnpm dlx shadcn@latest init</TypingAnimation>
-      <AnimatedSpan className="text-green-500">
-        ✔ Preflight checks.
-      </AnimatedSpan>
-      <AnimatedSpan className="text-green-500">
-        ✔ Verifying framework. Found Next.js.
-      </AnimatedSpan>
-      <AnimatedSpan className="text-green-500">
-        ✔ Validating Tailwind CSS.
-      </AnimatedSpan>
-      <AnimatedSpan className="text-green-500">
-        ✔ Validating import alias.
-      </AnimatedSpan>
-      <AnimatedSpan className="text-green-500">
-        ✔ Writing components.json.
-      </AnimatedSpan>
-      <AnimatedSpan className="text-green-500">
-        ✔ Checking registry.
-      </AnimatedSpan>
-      <AnimatedSpan className="text-green-500">
-        ✔ Updating tailwind.config.ts
-      </AnimatedSpan>
-      <AnimatedSpan className="text-green-500">
-        ✔ Updating app/globals.css
-      </AnimatedSpan>
-      <AnimatedSpan className="text-green-500">
-        ✔ Installing dependencies.
-      </AnimatedSpan>
-      <AnimatedSpan className="text-blue-500">
-        <span>ℹ Updated 1 file:</span>
-        <span className="pl-2">- lib/utils.ts</span>
-      </AnimatedSpan>
-      <TypingAnimation className="text-muted-foreground">
-        Success! Project initialization completed.
-      </TypingAnimation>
-      <TypingAnimation className="text-muted-foreground">
-        You may now add components.
-      </TypingAnimation>
-    </Terminal>
-            </div>
-            </motion.div>
-        </section>
+    <p className="text-gray-900 text-lg max-w-md leading-relaxed">
+      An aspiring <span className="font-semibold text-indigo-600">software engineer</span> 
+      passionate about <span className="font-semibold text-indigo-600">problem solving</span> 
+      and <span className="font-semibold text-indigo-600">full-stack development</span>.  
+      I love building scalable, efficient software solutions and collaborating in fast-paced environments.
+    </p>
+
+    {/* 🌟 Social Buttons */}
+    <div className="flex flex-wrap gap-4 pt-4">
+      <ShimmerButton >
+        <a
+          href="https://github.com/koushik-parimi24"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white bg-black hover:bg-gray-900 transition-all"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-5 h-5"
+          >
+            <path d="M12 .5C5.65.5.5 5.64.5 12c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.04 1.8 2.73 1.28 3.4.98.1-.76.41-1.28.75-1.58-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.44-2.26 1.16-3.06-.12-.29-.5-1.46.11-3.05 0 0 .96-.31 3.15 1.17a10.84 10.84 0 0 1 5.73 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.59.24 2.76.12 3.05.73.8 1.16 1.81 1.16 3.06 0 4.41-2.69 5.37-5.25 5.66.42.36.8 1.07.8 2.16 0 1.56-.02 2.81-.02 3.19 0 .31.21.67.8.56A10.98 10.98 0 0 0 23.5 12C23.5 5.64 18.35.5 12 .5Z" />
+          </svg>
+          GitHub
+        </a>
+      </ShimmerButton>
+
+      <ShimmerButton>
+        <a
+          href="https://www.linkedin.com/in/koushik-parimi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white transition-all"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-5 h-5"
+          >
+            <path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.77 0 5-2.24 5-5V5c0-2.76-2.23-5-5-5ZM7.12 20H3.56V9h3.56v11ZM5.34 7.48c-1.14 0-2.06-.93-2.06-2.08s.92-2.08 2.06-2.08 2.07.93 2.07 2.08-.93 2.08-2.07 2.08ZM20.44 20h-3.56v-5.75c0-1.37-.02-3.14-1.91-3.14-1.91 0-2.2 1.49-2.2 3.04V20h-3.56V9h3.42v1.51h.05c.48-.9 1.66-1.85 3.42-1.85 3.65 0 4.33 2.4 4.33 5.52V20Z" />
+          </svg>
+          LinkedIn
+        </a>
+      </ShimmerButton>
+    </div>
+  </motion.div>
+
+  {/* Right - Terminal Animation */}
+  <motion.div
+    initial={{ opacity: 0, x: 60 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8, delay: 0.2 }}
+    className="flex justify-center"
+  >
+    <div className="relative">
+      <div className="absolute -inset-3 rounded-full bg-gradient-to-r from-indigo-200 to-purple-200 blur-2xl opacity-60 animate-pulse"></div>
+      <Terminal>
+        <TypingAnimation>&gt; Initializing portfolio...</TypingAnimation>
+        <AnimatedSpan className="text-green-500">✔ Loading components...</AnimatedSpan>
+        <AnimatedSpan className="text-green-500">✔ Importing creativity...</AnimatedSpan>
+        <AnimatedSpan className="text-green-500">✔ Optimizing UI with React + Tailwind CSS...</AnimatedSpan>
+        <AnimatedSpan className="text-green-500">✔ Connecting Supabase & APIs...</AnimatedSpan>
+        <AnimatedSpan className="text-green-500">✔ Deploying to Vercel...</AnimatedSpan>
+        <TypingAnimation className="text-blue-500">
+          🚀 Portfolio ready at: koushikparimi.me
+        </TypingAnimation>
+        <TypingAnimation className="text-muted-foreground">
+          Welcome to my world of code.
+        </TypingAnimation>
+      </Terminal>
+    </div>
+  </motion.div>
+</section>
+
+
+
 
         {/* SKILLS SECTION */}
 
