@@ -58,7 +58,7 @@ import {
             <motion.div
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
-            
+            viewport={{ once: true }} 
             className="space-y-6"
             >
             <h1 className="text-5xl font-extrabold leading-tight">
@@ -141,8 +141,8 @@ import {
 <section className="relative z-10 max-w-9xl mx-auto px-6 md:px-1 py-24">
   <ScrollVelocityContainer className="text-lg md:text-2xl font-semibold text-gray-900 flex flex-col gap-12">
 
-    {/* Row 1 — Left to Right */}
-    <ScrollVelocityRow baseVelocity={10} direction={1}>
+
+    <ScrollVelocityRow baseVelocity={2} direction={1}>
       <div className="flex items-center gap-8">
         Java
         <SiJavascript /> JavaScript
@@ -157,8 +157,8 @@ import {
       </div>
     </ScrollVelocityRow>
 
-    {/* Row 2 — Right to Left */}
-    <ScrollVelocityRow baseVelocity={10} direction={-1}>
+
+    <ScrollVelocityRow baseVelocity={2} direction={-1}>
       <div className="flex items-center gap-8">
         <SiAwsamplify /> AWS
         <SiGooglecloud /> Google Cloud

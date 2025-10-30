@@ -13,7 +13,7 @@ import { InteractiveHoverButton2 } from "@/components/ui/InteractiveHoverButton2
 export default function HomePage() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-fuchsia-50 text-white">
-      {/* 🌀 Magic UI Retro Grid Background */}
+      
       <RetroGrid className="absolute inset-0 z-0 opacity-50" />
 
       {/* 🧭 Hero Section */}
@@ -53,11 +53,14 @@ export default function HomePage() {
 </p>
           <div className="flex gap-4">
             <InteractiveHoverButton className="text-black">
-              <Link href="/projects">
+            <Link href="/projects">
             View My Work 
             </Link>
             </InteractiveHoverButton>
-           <InteractiveHoverButton2 className="text-black"><Link href="/contact">Contact Me</Link></InteractiveHoverButton2>
+           <InteractiveHoverButton2 className="text-black">
+            <Link href="/contact">Contact Me</Link>
+           </InteractiveHoverButton2>
+           
           </div>
         </motion.div>
         </BlurFade>
