@@ -3,7 +3,6 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import {
   Form,
   FormField,
@@ -19,7 +18,6 @@ import { useState } from "react";
 import { CoolMode } from "@/components/CoolMode";
 import { DotPattern } from "@/components/ui/dot-pattern";
 
-
 // ✅ Validation schema
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -29,6 +27,7 @@ const formSchema = z.object({
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
   // ✅ React Hook Form setup
   const form = useForm<z.infer<typeof formSchema>>({
@@ -40,18 +39,40 @@ export default function ContactPage() {
     },
   });
 
-  // ✅ Form submit handler
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log("Form submitted:", values);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 2000);
-    form.reset();
+  // ✅ Submit handler using Formspree API
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    try {
+      const response = await fetch("https://formspree.io/f/mgvpzqry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+        setTimeout(() => setSubmitted(false), 3000);
+      } else {
+        setError(true);
+        setTimeout(() => setError(false), 3000);
+      }
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      setError(true);
+      setTimeout(() => setError(false), 3000);
+    }
   };
 
   return (
-    
-    <main className="min-h-screen bg-gray-50 text-gray-900 flex flex-col items-center justify-center px-6 py-16">
-        <div className="relative z-10 max-w-md w-full bg-white/80 backdrop-blur-lg shadow-lg rounded-xl border border-gray-200 p-8">
+    <main className="min-h-screen bg-gray-50 text-gray-900 flex flex-col items-center justify-center px-6 py-16 relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-10 -z-10">
+        <DotPattern />
+      </div>
+
+      <div className="relative z-10 max-w-md w-full bg-white/80 backdrop-blur-lg shadow-lg rounded-xl border border-gray-200 p-8">
         <h1 className="text-3xl font-semibold text-center mb-6 text-indigo-600">
           Get in Touch
         </h1>
@@ -84,7 +105,11 @@ export default function ContactPage() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="you@example.com" type="email" {...field} />
+                    <Input
+                      placeholder="you@example.com"
+                      type="email"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -110,18 +135,22 @@ export default function ContactPage() {
               )}
             />
 
-            {/* Submit Button */}
+            {/* Submit Button with CoolMode */}
             <CoolMode>
               <Button type="submit" className="w-full">
-              Send Message
-            </Button>
+                Send Message
+              </Button>
             </CoolMode>
-            
 
-            {/* Success Message */}
+            {/* Success / Error Messages */}
             {submitted && (
               <p className="text-center text-green-600 font-medium text-sm mt-2">
                 ✅ Message sent successfully!
+              </p>
+            )}
+            {error && (
+              <p className="text-center text-red-600 font-medium text-sm mt-2">
+                ❌ Failed to send message. Please try again later.
               </p>
             )}
           </form>
