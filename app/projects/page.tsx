@@ -15,7 +15,7 @@ export default function ProjectsPage() {
     {
       title: "IntervueAI – AI Interview Platform",
       link: "https://intervueai.koushikparimi.me",
-      image: "/projects/pj1.png",
+      image: "https://anmelxfindmnmefmtbdo.supabase.co/storage/v1/object/public/pj1/pj1.png",
       date: "2025",
       tech: [
         "React.js",
@@ -38,7 +38,7 @@ export default function ProjectsPage() {
     {
       title: "Watchroo – Movie Discovery Platform",
       link: "https://watchroo.koushikparimi.me",
-      image: "/projects/pj2.png",
+      image: "https://anmelxfindmnmefmtbdo.supabase.co/storage/v1/object/public/pj2/pj2.png",
       date: "2025",
       tech: [
         "React.js",
@@ -58,7 +58,7 @@ export default function ProjectsPage() {
     {
       title: "ProdXr – Inventory Manager",
       link: "https://github.com/koushik-parimi24/E-commerce-Inventory-Manager",
-      image: "/projects/pj-3.png",
+      image: "https://anmelxfindmnmefmtbdo.supabase.co/storage/v1/object/public/pj3/pj-3.png",
       date: "2024",
       tech: [
         "React.js",
@@ -80,7 +80,7 @@ export default function ProjectsPage() {
     <main className="relative min-h-screen bg-white text-gray-900 px-6 md:px-12 py-20">
       {/* Header */}
       <div className="text-center mb-16">
-        <DotPattern/>
+         <DotPattern/> 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -163,17 +163,22 @@ export default function ProjectsPage() {
               </CardContent>
 
               {/* Footer */}
-              <CardFooter className="px-6 pb-6">
-                <ShimmerButton>
-                <Link
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visit Project →
-                </Link>
-                </ShimmerButton>
-              </CardFooter>
+
+{/* Footer */}
+<CardFooter className="px-6 pb-6">
+  <Link
+    href={project.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block w-full"
+  >
+    <ShimmerButton className="w-full justify-center">
+      Visit Project →
+    </ShimmerButton>
+  </Link>
+</CardFooter>
+
+
             </Card>
           </motion.div>
         ))}

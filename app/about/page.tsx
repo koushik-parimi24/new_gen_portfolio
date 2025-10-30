@@ -78,32 +78,34 @@ import { ShimmerButton } from "@/components/ui/shimmer-button";
 
     {/* 🌟 Social Buttons */}
     <div className="flex flex-wrap gap-4 pt-4">
-      <ShimmerButton >
+      
         <a
           href="https://github.com/koushik-parimi24"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white bg-black hover:bg-gray-900 transition-all"
+          className="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white  transition-all"
         >
-          <svg
+          <ShimmerButton className="gap-2">
+            <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-5 h-5"
+            className="w-5 h-5 "
           >
             <path d="M12 .5C5.65.5.5 5.64.5 12c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.04 1.8 2.73 1.28 3.4.98.1-.76.41-1.28.75-1.58-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.44-2.26 1.16-3.06-.12-.29-.5-1.46.11-3.05 0 0 .96-.31 3.15 1.17a10.84 10.84 0 0 1 5.73 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.59.24 2.76.12 3.05.73.8 1.16 1.81 1.16 3.06 0 4.41-2.69 5.37-5.25 5.66.42.36.8 1.07.8 2.16 0 1.56-.02 2.81-.02 3.19 0 .31.21.67.8.56A10.98 10.98 0 0 0 23.5 12C23.5 5.64 18.35.5 12 .5Z" />
           </svg>
-          GitHub
+            GitHub
+          </ShimmerButton>
+          
         </a>
-      </ShimmerButton>
 
-      <ShimmerButton>
         <a
-          href="https://www.linkedin.com/in/koushik-parimi/"
+          href="https://www.linkedin.com/in/koushikparimi/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white transition-all"
         >
+        <ShimmerButton className="gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -112,9 +114,9 @@ import { ShimmerButton } from "@/components/ui/shimmer-button";
           >
             <path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.77 0 5-2.24 5-5V5c0-2.76-2.23-5-5-5ZM7.12 20H3.56V9h3.56v11ZM5.34 7.48c-1.14 0-2.06-.93-2.06-2.08s.92-2.08 2.06-2.08 2.07.93 2.07 2.08-.93 2.08-2.07 2.08ZM20.44 20h-3.56v-5.75c0-1.37-.02-3.14-1.91-3.14-1.91 0-2.2 1.49-2.2 3.04V20h-3.56V9h3.42v1.51h.05c.48-.9 1.66-1.85 3.42-1.85 3.65 0 4.33 2.4 4.33 5.52V20Z" />
           </svg>
-          LinkedIn
+          LinkedIn  
+          </ShimmerButton>
         </a>
-      </ShimmerButton>
     </div>
   </motion.div>
 
@@ -242,7 +244,7 @@ import { ShimmerButton } from "@/components/ui/shimmer-button";
     Certifications & Achievements
   </h2>
 
-  <div className="relative pl-8 border-l-2 border-indigo-400/40">
+  <div className="relative pl-8 border-l-2">
     {/* Animated Glow Line */}
     <motion.div
       initial={{ height: 0 }}
@@ -290,7 +292,7 @@ import { ShimmerButton } from "@/components/ui/shimmer-button";
         viewport={{ once: true }}
         className="relative mb-12 flex items-start gap-4 group"
       >
-        <div className="flex-shrink-0 mt-1">{cert.icon}</div>
+        <div className="shrink-0 mt-1">{cert.icon}</div>
 
         {/* Text */}
         <div className="space-y-1">
