@@ -53,8 +53,9 @@ export default function HomePage() {
 </p>
           <div className="flex gap-4">
             <InteractiveHoverButton className="text-black">
-              <Link href="/projects"/>
+              <Link href="/projects">
             View My Work 
+            </Link>
             </InteractiveHoverButton>
            <InteractiveHoverButton2 className="text-black"><Link href="/contact">Contact Me</Link></InteractiveHoverButton2>
           </div>
