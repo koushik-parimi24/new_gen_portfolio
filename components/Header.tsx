@@ -85,7 +85,7 @@ export default function Header() {
             transition={{ duration: 0.3 }}
           >
             {/* ✅ Wrapped button with CoolMode */}
-            <CoolMode options={{ particleCount: 20 }}>
+            <CoolMode options={{ particleCount: 20 }}>  
 <button
   onClick={() => window.open("https://vevxdyokovrxyxrhrqhj.supabase.co/storage/v1/object/public/resume/Koushik%20resume.pdf", "_blank")}
   className={`hidden md:inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 ${
@@ -179,13 +179,23 @@ export default function Header() {
               >
                 Contact
               </Link>
-              <Link
-                href="/signup"
-                onClick={() => setIsOpen(false)}
-                className="block mt-2 px-3 py-2 text-center rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
-              >
-                Get Started
-              </Link>
+            <button
+  onClick={() =>
+    window.open(
+      "https://vevxdyokovrxyxrhrqhj.supabase.co/storage/v1/object/public/resume/Koushik%20resume.pdf",
+      "_blank"
+    )
+  }
+  className={`flex items-center justify-center gap-2 w-full px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 whitespace-nowrap ${
+    scrolled
+      ? "bg-black text-white hover:bg-gray-900"
+      : "bg-indigo-600 text-white hover:bg-indigo-700"
+  }`}
+>
+  <Download className="w-4 h-4 shrink-0" />
+  <span className="truncate">Download Resume</span>
+</button>
+
             </div>
           </motion.nav>
         )}
