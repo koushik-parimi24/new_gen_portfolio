@@ -90,7 +90,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10 -z-10">
-        <DotPattern />
+    
       </div>
 
       {/* ✅ New Two-Column Layout Wrapper */}
@@ -98,7 +98,7 @@ export default function ContactPage() {
         
         {/* ✅ Left Column: Globe & Title */}
         <div className="flex-1 w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
-          <h1 className="text-4xl lg:text-5xl font-bold text-indigo-600 mb-4 ml-26">
+          <h1 className="text-4xl lg:text-5xl font-bold text-indigo-600 mb-4 ">
             Let's Connect
           </h1>
           <p className="text-lg text-gray-600 mb-8 max-w-lg">
@@ -106,7 +106,7 @@ export default function ContactPage() {
             have a question, a project idea.
           </p>
           <div className="relative w-full max-w-lg h-[400px] lg:h-[650px]">
-            <Globe />
+            <Globe   />
           </div>
         </div>
 
