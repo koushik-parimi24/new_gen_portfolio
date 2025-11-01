@@ -106,7 +106,7 @@ export default function ContactPage() {
             have a question, a project idea.
           </p>
           <div className="relative w-full max-w-lg h-[400px] lg:h-[650px]">
-            <Globe globeConfig={globeConfig} data={sampleArcs} />
+            <Globe />
           </div>
         </div>
 
