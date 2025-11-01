@@ -88,16 +88,10 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10 -z-10">
-    
-      </div>
 
-      {/* ✅ New Two-Column Layout Wrapper */}
       <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-center min-h-screen gap-12 ">
-        
-        {/* ✅ Left Column: Globe & Title */}
-        <div className="flex-1 w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+
+        <div className="hidden lg:flex flex-1 w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
           <h1 className="text-4xl lg:text-5xl font-bold text-indigo-600 mb-4 ">
             Let's Connect
           </h1>
@@ -106,7 +100,7 @@ export default function ContactPage() {
             have a question, a project idea.
           </p>
           <div className="relative w-full max-w-lg h-[400px] lg:h-[650px]">
-            <Globe   />
+            <Globe/>
           </div>
         </div>
 
