@@ -42,6 +42,20 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --animate-grid: grid 15s linear infinite;
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+    from {
+      background-position:
+        50% 50%,
+        50% 50%;
+    }
+    to {
+      background-position:
+        350% 5%,
+        350% 50%;
+    }
+  }
+
   @keyframes grid {
   0% {
     transform: translateY(-50%);

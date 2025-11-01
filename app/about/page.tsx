@@ -69,12 +69,11 @@ import { ShimmerButton } from "@/components/ui/shimmer-button";
       About <span className="text-indigo-400">Koushik Parimi</span>
     </h1>
 
-    <p className="text-gray-900 text-lg max-w-md leading-relaxed">
-      An aspiring <span className="font-semibold text-indigo-600">software engineer</span> 
-      passionate about <span className="font-semibold text-indigo-600">problem solving</span> 
-      and <span className="font-semibold text-indigo-600">full-stack development</span>.  
-      I love building scalable, efficient software solutions and collaborating in fast-paced environments.
-    </p>
+      <p className="text-gray-900 text-lg max-w-md leading-relaxed">
+  A passionate <span className="font-semibold text-indigo-600">Frontend Engineer </span> 
+  who loves crafting seamless digital experiences and solving real-world problems 
+  through elegant, scalable web solutions.
+</p>
 
     {/* 🌟 Social Buttons */}
     <div className="flex flex-wrap gap-4 pt-4">

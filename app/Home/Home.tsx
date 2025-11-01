@@ -9,15 +9,15 @@ import { BlurFade } from "@/components/ui/blur-fade"
 import Link from "next/link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { InteractiveHoverButton2 } from "@/components/ui/InteractiveHoverButton2"
-
+import { AuroraBackground } from "@/components/ui/aurora-background";
 export default function HomePage() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-fuchsia-50 text-white">
-      
-      <RetroGrid className="absolute inset-0 z-0 opacity-50" />
+   <AuroraBackground className="bg-fuchsia-50">  
+    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-white">
 
       {/* 🧭 Hero Section */}
       <section className="relative z-10 grid max-w-7xl grid-cols-1 md:grid-cols-2 gap-10 px-6 md:px-12">
+        
         {/* ✨ Left Side - Text */}
         <BlurFade>
         <motion.div
@@ -34,7 +34,7 @@ export default function HomePage() {
   A{" "}
 
   <Highlighter action="highlight" color="#87CEFA">
-    frontend developer
+    Frontend Dev
   </Highlighter>{" "}
   passionate about crafting interactive{" "}
   , delightful, and modern web experiences using{" "}
@@ -87,5 +87,6 @@ export default function HomePage() {
         </motion.div>
       </section>
     </main>
+    </AuroraBackground> 
   );
 }
