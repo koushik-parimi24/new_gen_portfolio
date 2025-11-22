@@ -182,7 +182,7 @@ export default function Header() {
             <button
   onClick={() =>
     window.open(
-      "https://vevxdyokovrxyxrhrqhj.supabase.co/storage/v1/object/public/resume/Koushik%20resume.pdf",
+      "https://uxxwwifbyutuqkjezzkx.supabase.co/storage/v1/object/public/Resume/resumenew.pdf",
       "_blank"
     )
   }
