@@ -87,7 +87,7 @@ export default function Header() {
             {/* ✅ Wrapped button with CoolMode */}
             <CoolMode options={{ particleCount: 20 }}>  
 <button
-  onClick={() => window.open("https://vevxdyokovrxyxrhrqhj.supabase.co/storage/v1/object/public/resume/Koushik%20resume.pdf", "_blank")}
+  onClick={() => window.open("https://uxxwwifbyutuqkjezzkx.supabase.co/storage/v1/object/public/Resume/resumenew.pdf", "_blank")}
   className={`hidden md:inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 ${
     scrolled
       ? "bg-black text-white hover:bg-gray-900"
